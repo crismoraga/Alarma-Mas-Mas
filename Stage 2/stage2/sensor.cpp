@@ -14,5 +14,5 @@ int Sensor::getZone() const {
 void Sensor::setClose(bool isClose) {
     //cambiamos su estado al pedido
     Sensor::close = isClose;
-    cout << "Sensor is "<< (close?"close.":"open.") << endl;
+    cout << "El sensor esta: "<< (close?"Abierto.":"Cerrado.") << endl;
 }

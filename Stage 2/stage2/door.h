@@ -5,11 +5,10 @@ class Door
 {
 private:
     Door(); // a door creation without sensor is not allowed.
+    MagneticSensor magneticSensor;
 public:
     Door(MagneticSensor sensor);
     void changeState();
-private:
-    MagneticSensor magneticSensor;
 };
 
 #endif // DOOR_H
