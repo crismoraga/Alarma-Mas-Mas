@@ -1,8 +1,10 @@
 #include "central.h"
 
+using namespace std;
+
 central::central()
 {
-    zones = new vector<MagneticSensor*>;
+    //zones = new vector<MagneticSensor*>;
 }
 
 void central::revisarZonas(vector<Door *> doors, vector<Window *> windows){
@@ -13,10 +15,7 @@ void central::revisarZonas(vector<Door *> doors, vector<Window *> windows){
     for (unsigned int i=0; i<windows.size(); i++) {
         isClose *= windows[i]->getState();
     }
-    if(isClose)cout << "Zonas Cerradas"<< endl;
-    else cout << "Alguna zona está abierta"<< endl;
+    if(isClose) cout << "Zonas Cerradas"<< endl;
+    else cout << "Alguna zona esta abierta"<< endl; // Intentamos usar tildes pero no se puede
 }
 
-void central::agregarSensor(MagneticSensor sensor){
-    zones.push_back(sensor);
-}

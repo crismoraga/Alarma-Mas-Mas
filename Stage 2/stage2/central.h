@@ -2,9 +2,10 @@
 #define CENTRAL_H
 #include "door.h"
 #include "window.h"
+#include <iostream>
+#include <vector>
 
 using namespace std;
-#include <QtCore/qglobal.h>
 
 class central
 {
