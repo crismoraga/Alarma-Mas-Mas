@@ -7,6 +7,9 @@ public:
     MagneticSensor(int z=0);
     void setSensorOpen();
     void setSensorClose();
+
+private:
+    int zone;
 };
 
 #endif // MAGNETIC_SENSOR_H

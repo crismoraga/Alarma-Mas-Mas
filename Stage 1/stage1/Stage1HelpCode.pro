@@ -15,4 +15,4 @@ HEADERS += \
     sensor.h
 
 DISTFILES += \
-    config.txt
+    config.txt \

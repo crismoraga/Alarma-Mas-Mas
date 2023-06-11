@@ -2,9 +2,10 @@
 
 Door::Door()
 {
-
+    //Door::magneticSensor = *new MagneticSensor();
 }
-Door::Door(MagneticSensor sensor): ???{ //no sé que mas puede heredar
+
+Door::Door(MagneticSensor sensor) : magneticSensor(sensor){
 }
 void Door::changeState()
 {

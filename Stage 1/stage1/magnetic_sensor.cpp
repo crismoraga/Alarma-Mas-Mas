@@ -1,8 +1,6 @@
 #include "magnetic_sensor.h"
 
-MagneticSensor::MagneticSensor(int z)
-{
-    //no sé que hacer con z
+MagneticSensor::MagneticSensor(int z):zone(z){
 }
 
 void MagneticSensor::setSensorOpen() {
