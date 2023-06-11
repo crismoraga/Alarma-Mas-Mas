@@ -15,3 +15,6 @@ void Door::changeState()
             magneticSensor.setSensorClose();
 }
 
+bool Door::getState(){
+        return magneticSensor.isClose();
+}

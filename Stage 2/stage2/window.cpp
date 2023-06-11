@@ -14,3 +14,7 @@ void Window::changeState()
     else
         magneticSensor.setSensorClose();
 }
+
+bool Window::getState(){
+    return magneticSensor.isClose();
+}

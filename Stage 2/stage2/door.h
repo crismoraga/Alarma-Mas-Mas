@@ -9,6 +9,7 @@ private:
 public:
     Door(MagneticSensor sensor);
     void changeState();
+    bool getState();
 };
 
 #endif // DOOR_H

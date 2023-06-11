@@ -50,4 +50,5 @@ int main(){
         windows[i]->changeState();
         windows[i]->changeState();
     }
+    central.revisarZona(doors, windows);
 }

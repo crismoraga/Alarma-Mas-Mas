@@ -4,6 +4,7 @@ CONFIG -= app_bundle
 CONFIG -= qt
 
 SOURCES += \
+        central.cpp \
         door.cpp \
         magnetic_sensor.cpp \
         main.cpp \
@@ -11,6 +12,7 @@ SOURCES += \
         window.cpp
 
 HEADERS += \
+    central.h \
     door.h \
     magnetic_sensor.h \
     sensor.h \
