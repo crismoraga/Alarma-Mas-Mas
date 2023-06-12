@@ -1,17 +1,24 @@
 #ifndef CENTRAL_H
 #define CENTRAL_H
-#include "door.h"
-#include "window.h"
-#include <iostream>
+#include <QObject>
 #include <vector>
+#include <QTimer>
+#include "sensor.h"
+using namespace std; //needed by vector<>
 
-using namespace std;
-
-class central
+class Central : public QObject
 {
+    Q_OBJECT
 public:
-    central();
-    void revisarZonas(vector<Door *> doors, vector<Window *> windows);
+    explicit Central(QObject *parent = nullptr);
+    void addNewSensor(Sensor * ps);
+    ~Central();
+private slots:
+    void checkZones();
+private:
+    void checkCloseZones(bool closeZones[]);
+    vector<Sensor *> zones;  // keep references to all sensors already installed in doors and windows.
+    QTimer * timer;
 };
 
 #endif // CENTRAL_H

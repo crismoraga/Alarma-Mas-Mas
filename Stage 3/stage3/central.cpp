@@ -1,21 +1,25 @@
 #include "central.h"
+#include <iostream>
 
-using namespace std;
-
-central::central()
-{
-    //zones = new vector<MagneticSensor*>;
+Central::Central(QObject *parent)
+    : QObject(parent), timer(new QTimer(this)) {
+    connect(timer, SIGNAL(timeout()), ???, ???);
+    timer ->start(200);
 }
-
-void central::revisarZonas(vector<Door *> doors, vector<Window *> windows){
-    bool isClose = true;
-    for (unsigned int i=0; i<doors.size(); i++) {
-        isClose *= doors[i]->getState();
-    }
-    for (unsigned int i=0; i<windows.size(); i++) {
-        isClose *= windows[i]->getState();
-    }
-    if(isClose) cout << "Zonas Cerradas"<< endl;
-    else cout << "Alguna zona esta abierta"<< endl; // Intentamos usar tildes pero no se puede
+void Central::addNewSensor(Sensor * ps){
+    zones.push_back(ps);
 }
-
+void Central::checkZones() {
+    bool closeZones[2];
+    checkCloseZones(closeZones);
+    if (???)
+        cout << "Alguna zona está abierta." << endl;
+}
+void Central::checkCloseZones(bool closeZones[]) {
+    closeZones[0]= closeZones[1] = true;
+    for (uint i=0; i< zones.size(); i++)
+        ???;
+}
+Central::~Central(){
+    delete timer;
+}

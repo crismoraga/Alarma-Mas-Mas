@@ -1,20 +1,19 @@
 #include "door.h"
+#include "doorview.h"
 
 Door::Door()
 {
-    //Door::magneticSensor = *new MagneticSensor();
+
+}
+Door::Door(MagneticSensor * sensor, DoorView * v): ?? {
+    isClose=true;
+    view->setDoorModel(this);
+}
+void Door::changeState() {
+    if (isClose) {
+       ???
+    } else {
+       ???
+    }
 }
 
-Door::Door(MagneticSensor sensor) : magneticSensor(sensor){
-}
-void Door::changeState()
-{
-    if (magneticSensor.isClose())
-       magneticSensor.setSensorOpen();
-        else
-            magneticSensor.setSensorClose();
-}
-
-bool Door::getState(){
-        return magneticSensor.isClose();
-}
