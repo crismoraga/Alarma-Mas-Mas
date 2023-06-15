@@ -40,4 +40,4 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
 
 DISTFILES += \
-    config.txt
+    "C:/Users/Moragax3/Desktop/Tarea3 Poo/stage3/config.txt"

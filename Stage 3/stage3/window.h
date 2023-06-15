@@ -1,7 +1,7 @@
 #ifndef WINDOW_H
 #define WINDOW_H
 #include "magneticsensor.h"
-#include "windowview.h"
+class WindowView;
 
 class Window
 {

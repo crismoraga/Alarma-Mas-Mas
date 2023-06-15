@@ -1,15 +1,16 @@
-#include "housewindow.h"
 #include <QApplication>
+#include <QtWidgets>
 #include <iostream>
 #include <fstream>
 #include <vector>
+#include "housewindow.h"
 #include "door.h"
 #include "doorview.h"
 #include "central.h"
 #include "window.h"
 #include "windowview.h"
+
 using namespace std;
-#include <QtWidgets>
 
 int main(int argc, char *argv[])
 {
@@ -18,11 +19,14 @@ int main(int argc, char *argv[])
     Central central;
     ifstream fin;
     int nDoors, nWindows;
+    /*
     if (argc != 2) {
         cout << "Usage: "<<argv[0]<<" <configuration_file>" << endl;
         return -1;
     }
-    fin.open(argv[1]);
+    */
+    //fin.open(argv[1]);
+    fin.open("C:/Users/Moragax3/Desktop/Tarea3 Poo/stage3/config.txt");
     if (fin.fail()){
         cout << "Could not read file" << endl;
         return -2;
@@ -40,7 +44,7 @@ int main(int argc, char *argv[])
         central.addNewSensor(sensor);
         gui.addHouseHollow(doorView);
     }
-    for(int i=0; i<nDoors; i++) {
+    for(int i=0; i<nWindows; i++) {
         int x, y, angle, zone;
         fin >> x >> y >> angle >> zone;
         MagneticSensor * sensor = new MagneticSensor(zone);
