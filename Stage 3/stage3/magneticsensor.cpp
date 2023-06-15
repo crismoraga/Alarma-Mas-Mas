@@ -5,10 +5,12 @@ MagneticSensor::MagneticSensor(int z): Sensor(z){
 }
 void MagneticSensor::setSensorOpen() {
     MagneticSensor::setClose(false);
+    view->setOpenView();
     //quizá algo con la view?
 }
 void MagneticSensor::setSensorClose() {
    MagneticSensor::setClose(true);
+    view->setCloseView();
     //quizá algo con la view?
 }
 MagneticSensorView * MagneticSensor::getView() {
