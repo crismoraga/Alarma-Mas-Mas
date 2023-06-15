@@ -50,7 +50,7 @@ void DoorView::installMagneticSensor(MagneticSensorView & mv){
                                  switchPillar->boundingRect().height(),
                                  mv.getSwitchView().rect().width(),
                                  mv.getSwitchView().rect().height());
-    mv.getMagnetView().setTransformOriginPoint(??, ??);
+    mv.getMagnetView().setTransformOriginPoint(doorPanel->rect().left(), doorPanel->rect().bottom());//debe tener el mismo centro que puerta
     addToGroup(&mv.getMagnetView());
     addToGroup(&mv.getSwitchView());
 }
