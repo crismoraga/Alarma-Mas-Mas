@@ -17,27 +17,33 @@ void WindowView::makeWindowView(){
     p.append(QPointF(0,0));
     p.append(QPointF(0,20));
     p.append(QPointF(10,20));
-    p.append(QPointF(10,10));
-    p.append(QPointF(20,10));
     p.append(QPointF(20,0));
     origenPillar->setPolygon(p);
     origenPillar->setBrush(Qt::blue);
+
     switchPillar=new QGraphicsPolygonItem(this);
     p.clear();
     p.append(QPointF(160,0));
-    p.append(QPointF(160,10));
-    p.append(QPointF(170,10));
+    p.append(QPointF(160,20));
     p.append(QPointF(170,20));
-    p.append(QPointF(180,20));
-    p.append(QPointF(180,0));
+    p.append(QPointF(170,0));
+
     switchPillar->setPolygon(p);
     switchPillar->setBrush(Qt::blue);
-    windowPanel = new QGraphicsRectItem(10, 10, 200, 20, this);
+
+    QGraphicsPolygonItem * windowPanel = new QGraphicsPolygonItem(this);
+    windowPanel = new QGraphicsRectItem(10, 10, 90, 10, this);
     windowPanel->setBrush(Qt::blue);
-    windowPanel->setTransformOriginPoint(windowPanel->rect().left(), windowPanel->rect().bottom());
+
+    windowSlidingPanel = new QGraphicsRectItem(90, 20, 90, 10, this);
+    windowSlidingPanel->setBrush(Qt::blue);
+
+    //windowSlidingPanel->setTransformOriginPoint(windowPanel->rect().left(), windowPanel->rect().bottom());
+
     addToGroup(origenPillar);
     addToGroup(switchPillar);
     addToGroup(windowPanel);
+    addToGroup(windowSlidingPanel);
 }
 void WindowView::setWindowModel(Window * m){
     model=m;
@@ -56,12 +62,12 @@ void WindowView::installMagneticSensor(MagneticSensorView & mv){
     addToGroup(&mv.getSwitchView());
 }
 void WindowView::setOpen(){
-    windowPanel->setRotation(90);
-    magnet->setRotation(90);
+    windowSlidingPanel->setPos(10, 20);
+    magnet->setPos(10, 20);
 }
 void WindowView::setClose(){
-    windowPanel->setRotation(0);
-    magnet->setRotation(0);
+    windowSlidingPanel->setPos(90, 20);
+    magnet->setPos(90, 20);
 }
 void WindowView::mousePressEvent(QGraphicsSceneMouseEvent * event){
     if (model!= NULL && event->button()==Qt::LeftButton)
