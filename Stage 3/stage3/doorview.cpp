@@ -31,7 +31,7 @@ void DoorView::makeDoorView(){
     p.append(QPointF(180,0));
     switchPillar->setPolygon(p);
     switchPillar->setBrush(Qt::blue);
-    doorPanel = new QGraphicsRectItem(??, ??, ??, ??, this);
+    doorPanel = new QGraphicsRectItem(10, 10, 10, 170, this); //x=10, y = 10, ancho = 10, largo = 170
     doorPanel->setBrush(Qt::blue);
     doorPanel->setTransformOriginPoint(doorPanel->rect().left(), doorPanel->rect().bottom());
     addToGroup(origenPillar);
