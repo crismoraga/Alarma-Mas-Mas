@@ -6,6 +6,8 @@
 #include "door.h"
 #include "doorview.h"
 #include "central.h"
+#include "window.h"
+#include "windowview.h"
 using namespace std;
 #include <QtWidgets>
 
@@ -29,7 +31,7 @@ int main(int argc, char *argv[])
     fin >> nDoors;
     fin >> nWindows;
     cout << "nDoors:" << nDoors << " nWindows: " << nWindows << endl;
-    for( int i=0; i<nDoors; i++) {
+    for(int i=0; i<nDoors; i++) {
         int x, y, angle, zone;
         fin >> x >> y >> angle >> zone;
         MagneticSensor * sensor = new MagneticSensor(zone);
@@ -37,6 +39,15 @@ int main(int argc, char *argv[])
         new Door(sensor, doorView);
         central.addNewSensor(sensor);
         gui.addHouseHollow(doorView);
+    }
+    for(int i=0; i<nDoors; i++) {
+        int x, y, angle, zone;
+        fin >> x >> y >> angle >> zone;
+        MagneticSensor * sensor = new MagneticSensor(zone);
+        WindowView * windowView = new WindowView(x,y,angle, sensor->getView());
+        new Window(sensor, windowView);
+        central.addNewSensor(sensor);
+        gui.addHouseHollow(windowView);
     }
     gui.show();
     return a.exec();

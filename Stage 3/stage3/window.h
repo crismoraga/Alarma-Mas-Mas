@@ -1,17 +1,19 @@
 #ifndef WINDOW_H
 #define WINDOW_H
-#include "magnetic_sensor.h"
+#include "magneticsensor.h"
+#include "windowview.h"
 
 class Window
 {
-public:
-    Window(MagneticSensor sensor);
-    void changeState();
-    bool getState();
 private:
     Window();
-    MagneticSensor magneticSensor;
-
+public:
+    Window(MagneticSensor * sensor, WindowView * v);
+    void changeState();
+private:
+    MagneticSensor * magneticSensor;
+    WindowView * view;
+    bool isClose;
 };
 
 #endif // WINDOW_H

@@ -16,7 +16,9 @@ SOURCES += \
     magneticsensor.cpp \
     magneticsensorview.cpp \
     main.cpp \
-    sensor.cpp
+    sensor.cpp \
+    window.cpp \
+    windowview.cpp
 
 HEADERS += \
     central.h \
@@ -25,7 +27,9 @@ HEADERS += \
     housewindow.h \
     magneticsensor.h \
     magneticsensorview.h \
-    sensor.h
+    sensor.h \
+    window.h \
+    windowview.h
 
 FORMS += \
     housewindow.ui
