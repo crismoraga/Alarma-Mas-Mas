@@ -21,7 +21,7 @@ private:
     void installMagneticSensor(MagneticSensorView & msView);
     void makeWindowView();
     Window * model;
-    QGraphicsRectItem * windowPanel;
+    QGraphicsRectItem * windowSlidingPanel;
     QGraphicsPolygonItem * switchPillar;
     QGraphicsRectItem * magnet;
 };

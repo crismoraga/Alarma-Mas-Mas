@@ -11,13 +11,13 @@ Door::Door(MagneticSensor * sensor, DoorView * v): magneticSensor(sensor), view(
 }
 void Door::changeState() {
     if (isClose) {
-        isClose = true;
-        magneticSensor->setSensorClose();
-        view->setClose();
-    } else {
         isClose = false;
         magneticSensor->setSensorOpen();
         view->setOpen();
+    } else {
+        isClose = true;
+        magneticSensor->setSensorClose();
+        view->setClose();
     }
 }
 
