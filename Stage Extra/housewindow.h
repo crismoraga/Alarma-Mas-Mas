@@ -29,10 +29,13 @@ private slots:
     void on_pushButton_clicked();
 
     void on_pushButton_2_clicked();
+    void alarmCheck();
 
 private:
     Ui::HouseWindow *ui;
     QGraphicsScene interiorScene;
+    QGraphicsScene exteriorScene;
+    QGraphicsPolygonItem *siren;
     Central *c;
 };
 #endif // HOUSEWINDOW_H
