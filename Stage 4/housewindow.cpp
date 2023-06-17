@@ -3,7 +3,7 @@
 #include <iostream>
 using namespace std;
 
-HouseWindow::HouseWindow(QWidget *parent): QMainWindow(parent), ui(new Ui::HouseWindow)
+HouseWindow::HouseWindow(QWidget *parent): QMainWindow(parent), ui(new Ui::HouseWindow), timer(new QTimer(this)
 {
     ui->setupUi(this);
     ui->houseRegion->setScene(&interiorScene);
@@ -24,6 +24,7 @@ HouseWindow::HouseWindow(QWidget *parent): QMainWindow(parent), ui(new Ui::House
 
     ui->alarmRegion->setScene(&exteriorScene);
     connect(c->timer, SIGNAL(timeout()), this, SLOT(alarmCheck()));
+
 }
 void HouseWindow::addHouseHollow(QGraphicsItemGroup * compoundItem){
     interiorScene.addItem(compoundItem);
@@ -36,14 +37,16 @@ void HouseWindow::setCentral(Central *c)
 
 void HouseWindow::on_pushButton_clicked()
 {
-    c->timer->start(200);
+    c->timerStart->start(5000));//5[s]
+    c->timer->start(200));//0.2[s]
+    c->setZone0Build(true);
     ui->lineEdit->setText("Alarma activada!!");
 }
 
 
 void HouseWindow::on_pushButton_2_clicked()
 {
-    c->timer->stop();
+    c->timer->stop();//5[s]
     ui->lineEdit->setText("Alarma desactivada!!");
 }
 void HouseWindow::alarmCheck(){
@@ -54,6 +57,7 @@ void HouseWindow::alarmCheck(){
         else siren->setBrush(Qt::green);
     }
 }
+
 
 HouseWindow::~HouseWindow()
 {
