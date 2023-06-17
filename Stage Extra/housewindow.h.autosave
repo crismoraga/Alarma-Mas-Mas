@@ -18,6 +18,7 @@ class HouseWindow : public QMainWindow
 public:
     HouseWindow(QWidget *parent = nullptr);
     void addHouseHollow(QGraphicsItemGroup *); // doors and windows
+    void addAlarmHollow(QGraphicsItemGroup *); // doors and windows
     void setCentral(Central *c);
     ~HouseWindow();
 
@@ -29,13 +30,12 @@ private slots:
     void on_pushButton_clicked();
 
     void on_pushButton_2_clicked();
-    void alarmCheck();
 
 private:
     Ui::HouseWindow *ui;
     QGraphicsScene interiorScene;
-    QGraphicsScene exteriorScene;
-    QGraphicsPolygonItem *siren;
+    QGraphicsScene eScene;
     Central *c;
+    QGraphicsItemGroup *siren;
 };
 #endif // HOUSEWINDOW_H

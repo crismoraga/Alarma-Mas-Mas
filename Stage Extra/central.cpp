@@ -5,7 +5,6 @@ Central::Central(QObject *parent)
     : QObject(parent), timer(new QTimer(this)) {
     connect(timer, SIGNAL(timeout()), this, SLOT(checkZones()));
     timer ->start(200);
-    isClose = true;
 }
 void Central::addNewSensor(Sensor * ps){
     zones.push_back(ps);
@@ -13,12 +12,8 @@ void Central::addNewSensor(Sensor * ps){
 void Central::checkZones() {
     bool closeZones[2];
     checkCloseZones(closeZones);
-    if (!closeZones[0] || !closeZones[1]){
+    if (!closeZones[0] || !closeZones[1])
         cout << "Alguna zona está abierta." << endl;
-        isColse = false;
-    }else{
-        isClose = true;
-    }
 }
 void Central::checkCloseZones(bool closeZones[]) {
     closeZones[0]= closeZones[1] = true;
@@ -26,11 +21,6 @@ void Central::checkCloseZones(bool closeZones[]) {
         if(zones[i]->getZone() == 0)closeZones[0] *=zones[i]->isClose();
         else closeZones[1]*=zones[i]->isClose();
 }
-
-bool Central::getIsClose(){
-    return isClose;
-}
-
 Central::~Central(){
     delete timer;
 }
