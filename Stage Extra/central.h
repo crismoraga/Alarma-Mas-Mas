@@ -13,7 +13,9 @@ public:
     explicit Central(QObject *parent = nullptr);
     void addNewSensor(Sensor * ps);
     bool getIsClose();
-    bool setZone0Build(bool);
+    void setZone0Build(bool);
+    void setIsTimer(bool);
+    void stopTD();
     //QTimer* getTimer();
     ~Central();
     QTimer* timer;
@@ -31,6 +33,7 @@ private:
     vector<Sensor *> zones; // keep references to all sensors already installed in doors and windows.
     bool isClose;
     bool zone0build;
+    bool isTimer;
 };
 
 #endif // CENTRAL_H

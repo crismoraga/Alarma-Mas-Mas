@@ -39,6 +39,7 @@ void HouseWindow::on_pushButton_clicked()
 {
     c->timerStart->start(5000));//5[s]
     c->timer->start(200));//0.2[s]
+    c->setIsTimer(true);
     c->setZone0Build(true);
     ui->lineEdit->setText("Alarma activada!!");
 }
@@ -47,6 +48,7 @@ void HouseWindow::on_pushButton_clicked()
 void HouseWindow::on_pushButton_2_clicked()
 {
     c->timer->stop();//5[s]
+    c->setIsTimer(false);
     ui->lineEdit->setText("Alarma desactivada!!");
 }
 void HouseWindow::alarmCheck(){
