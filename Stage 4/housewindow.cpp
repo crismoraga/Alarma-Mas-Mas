@@ -1,12 +1,12 @@
 #include "housewindow.h"
 #include "ui_housewindow.h"
+#include <iostream>
+using namespace std;
 
 HouseWindow::HouseWindow(QWidget *parent): QMainWindow(parent), ui(new Ui::HouseWindow)
 {
     ui->setupUi(this);
     ui->houseRegion->setScene(&interiorScene);
-    connect(ui->pushButton, SIGNAL(clicked()), this, SLOT(StartTimer));
-    connect(ui->pushButton_2, SIGNAL(clicked()), this, SLOT(StopTimer));
 }
 void HouseWindow::addHouseHollow(QGraphicsItemGroup * compoundItem){
     interiorScene.addItem(compoundItem);
@@ -17,18 +17,20 @@ void HouseWindow::setCentral(Central *c)
     HouseWindow::c = c;
 }
 
-void HouseWindow::StartTimer()
+void HouseWindow::on_pushButton_clicked()
 {
-    c->getTimer()->start();
+    c->timer->start(200);
+    ui->lineEdit->setText("Alarma activada!!");
 }
 
-void HouseWindow::StopTimer()
+
+void HouseWindow::on_pushButton_2_clicked()
 {
-    c->getTimer()->stop();
+    c->timer->stop();
+    ui->lineEdit->setText("Alarma desactivada!!");
 }
 
 HouseWindow::~HouseWindow()
 {
     delete ui;
 }
-

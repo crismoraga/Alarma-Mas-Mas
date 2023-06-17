@@ -15,11 +15,6 @@ void Central::checkZones() {
     if (!closeZones[0] || !closeZones[1])
         cout << "Alguna zona está abierta." << endl;
 }
-QTimer *Central::getTimer()
-{
-    std::cout << timer << endl;
-    return timer;
-}
 void Central::checkCloseZones(bool closeZones[]) {
     closeZones[0]= closeZones[1] = true;
     for (uint i=0; i< zones.size(); i++)

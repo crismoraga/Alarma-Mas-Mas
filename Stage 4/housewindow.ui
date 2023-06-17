@@ -45,9 +45,6 @@
          </property>
         </widget>
        </item>
-       <item row="1" column="0">
-        <widget class="QTimeEdit" name="timeEdit"/>
-       </item>
        <item row="1" column="1">
         <widget class="QPushButton" name="pushButton">
          <property name="text">
@@ -73,10 +70,10 @@
           </property>
           <property name="geometry">
            <rect>
-            <x>130</x>
-            <y>80</y>
-            <width>111</width>
-            <height>71</height>
+            <x>50</x>
+            <y>50</y>
+            <width>281</width>
+            <height>211</height>
            </rect>
           </property>
           <property name="minimumSize">
@@ -93,6 +90,12 @@
           </property>
           <property name="styleSheet">
            <string notr="true">background-color: green;</string>
+          </property>
+          <property name="frameShape">
+           <enum>QFrame::Box</enum>
+          </property>
+          <property name="frameShadow">
+           <enum>QFrame::Raised</enum>
           </property>
          </widget>
         </widget>

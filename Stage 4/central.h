@@ -12,14 +12,14 @@ class Central : public QObject
 public:
     explicit Central(QObject *parent = nullptr);
     void addNewSensor(Sensor * ps);
-    QTimer* getTimer();
+    //QTimer* getTimer();
     ~Central();
+    QTimer* timer;
 private slots:
     void checkZones();
 private:
     void checkCloseZones(bool closeZones[]);
     vector<Sensor *> zones;  // keep references to all sensors already installed in doors and windows.
-    QTimer * timer;
 };
 
 #endif // CENTRAL_H

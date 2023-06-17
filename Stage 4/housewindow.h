@@ -21,9 +21,14 @@ public:
     void setCentral(Central *c);
     ~HouseWindow();
 
+//public slots:
+    //void StartTimer();
+    //void StopTimer();
+
 private slots:
-    void StartTimer();
-    void StopTimer();
+    void on_pushButton_clicked();
+
+    void on_pushButton_2_clicked();
 
 private:
     Ui::HouseWindow *ui;
