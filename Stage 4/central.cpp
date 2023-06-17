@@ -15,7 +15,7 @@ void Central::checkZones() {
     checkCloseZones(closeZones);
     if (!closeZones[0] || !closeZones[1]){
         cout << "Alguna zona está abierta." << endl;
-        isColse = false;
+        isClose = false;
     }else{
         isClose = true;
     }

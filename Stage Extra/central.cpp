@@ -19,6 +19,7 @@ void Central::addNewSensor(Sensor * ps){
 }
 void Central::checkZones() {
     bool closeZones[2];
+    isClose = true;
     if(isTimer){//Si timer true, revisara, si no, no lo hara
         checkCloseZones(closeZones);
         if(!zone0build){//Si es falso, se chequeara normalemte

@@ -37,7 +37,6 @@ void HouseWindow::setCentral(Central *c)
 
 void HouseWindow::on_pushButton_clicked()
 {
-    c->timerStart->start(5000));//5[s]
     c->timer->start(200));//0.2[s]
     c->setZone0Build(true);
     ui->lineEdit->setText("Alarma activada!!");
@@ -51,9 +50,9 @@ void HouseWindow::on_pushButton_2_clicked()
 }
 void HouseWindow::alarmCheck(){
     if(c->getIsClose()){
-        siren->hijo->setBrush(Qt::green);
+        siren->setBrush(Qt::green);
     }else{
-        if (siren.color == Qt::green) siren->hijo->setBrush(Qt::red);
+        if (siren.color == Qt::green) siren->setBrush(Qt::red);
         else siren->setBrush(Qt::green);
     }
 }
