@@ -12,6 +12,7 @@ void Central::addNewSensor(Sensor * ps){
 void Central::checkZones() {
     bool closeZones[2];
     checkCloseZones(closeZones);
+    cout << "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA." << endl;
     if (!closeZones[0] || !closeZones[1])
         cout << "Alguna zona está abierta." << endl;
 }

@@ -30,7 +30,20 @@
      <item>
       <layout class="QFormLayout" name="formLayout">
        <item row="0" column="0" colspan="2">
-        <widget class="QLineEdit" name="lineEdit"/>
+        <widget class="QLineEdit" name="lineEdit">
+         <property name="text">
+          <string/>
+         </property>
+         <property name="frame">
+          <bool>true</bool>
+         </property>
+         <property name="readOnly">
+          <bool>true</bool>
+         </property>
+         <property name="placeholderText">
+          <string>Estado Alarma</string>
+         </property>
+        </widget>
        </item>
        <item row="1" column="0">
         <widget class="QTimeEdit" name="timeEdit"/>
@@ -60,8 +73,8 @@
           </property>
           <property name="geometry">
            <rect>
-            <x>90</x>
-            <y>50</y>
+            <x>130</x>
+            <y>80</y>
             <width>111</width>
             <height>71</height>
            </rect>
@@ -95,7 +108,7 @@
      <x>0</x>
      <y>0</y>
      <width>825</width>
-     <height>25</height>
+     <height>22</height>
     </rect>
    </property>
   </widget>

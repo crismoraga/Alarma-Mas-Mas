@@ -12,6 +12,7 @@ class Central : public QObject
 public:
     explicit Central(QObject *parent = nullptr);
     void addNewSensor(Sensor * ps);
+    QTimer* getTimer();
     ~Central();
 private slots:
     void checkZones();

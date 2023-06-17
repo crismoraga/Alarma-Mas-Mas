@@ -17,6 +17,7 @@ int main(int argc, char *argv[])
     QApplication a(argc, argv);
     HouseWindow gui;  // gui: Graphical User Interface
     Central central;
+    Central *c = &central;
     ifstream fin;
     int nDoors, nWindows;
     /*
@@ -26,7 +27,7 @@ int main(int argc, char *argv[])
     }
     */
     //fin.open(argv[1]);
-    fin.open("C:/Users/carlo/OneDrive/Escritorio/U/POO/Tarea3/Alarma-Mas-Mas-main/Stage 4/stage4/config.txt");
+    fin.open("C:/Users/Moragax3/Desktop/Tarea3 Poo/stage3/config.txt");
     if (fin.fail()){
         cout << "Could not read file" << endl;
         return -2;
@@ -53,6 +54,7 @@ int main(int argc, char *argv[])
         central.addNewSensor(sensor);
         gui.addHouseHollow(windowView);
     }
+    gui.setCentral(c);
     gui.show();
     return a.exec();
 }
