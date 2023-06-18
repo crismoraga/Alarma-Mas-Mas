@@ -20,6 +20,16 @@ void Central::checkZones() {
         isClose = true;
     }
 }
+
+void Central::setZone0Build(bool b){
+    zone0build = b;
+}
+
+void Central::changeZone0Build(){
+    zone0build = false;
+    checkZones();//llamará a check zones inmediatamente
+}
+
 void Central::checkCloseZones(bool closeZones[]) {
     closeZones[0]= closeZones[1] = true;
     for (uint i=0; i< zones.size(); i++)
