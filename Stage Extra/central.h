@@ -15,7 +15,6 @@ public:
     bool getIsClose();
     void setZone0Build(bool);
     void setIsTimer(bool);
-    void stopTD();
     //QTimer* getTimer();
     ~Central();
     QTimer* timer;
@@ -28,6 +27,7 @@ private slots:
     void checkZones();
     void changeZone0Build();
     void startTD();
+    void stopTD();
 private:
     void checkCloseZones(bool closeZones[]);
     vector<Sensor *> zones; // keep references to all sensors already installed in doors and windows.

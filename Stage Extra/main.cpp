@@ -15,23 +15,20 @@ using namespace std;
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
-    HouseWindow gui;  // gui: Graphical User Interface
     Central central;
+    HouseWindow gui(nullptr, &central);  // gui: Graphical User Interface
     ifstream fin;
     int nDoors, nWindows;
-    /*
     if (argc != 2) {
         cout << "Usage: "<<argv[0]<<" <configuration_file>" << endl;
         return -1;
     }
-    */
-    //fin.open(argv[1]);
-    fin.open("C:/Users/Moragax3/Desktop/Tarea3 Poo/stage3/config.txt");
+    fin.open(argv[1]);
     if (fin.fail()){
         cout << "Could not read file" << endl;
         return -2;
     }
-    //cout << "Argument:" << argv[1] << endl;
+    cout << "Argument:" << argv[1] << endl;
     fin >> nDoors;
     fin >> nWindows;
     cout << "nDoors:" << nDoors << " nWindows: " << nWindows << endl;
@@ -53,7 +50,6 @@ int main(int argc, char *argv[])
         central.addNewSensor(sensor);
         gui.addHouseHollow(windowView);
     }
-    gui.setCentral(&central);
     gui.show();
     return a.exec();
 }

@@ -9,8 +9,6 @@ DoorView::DoorView(int x, int y, int angle, MagneticSensorView * mv) {
     transform.translate(x,y);
     transform.rotate(angle);
     setTransform(transform);
-
-    //connect(this, SIGNAL(mousePressEvent()), this, SLOT(mousePressEvent()));
 }
 void DoorView::makeDoorView(){
     QGraphicsPolygonItem * origenPillar=new QGraphicsPolygonItem(this);

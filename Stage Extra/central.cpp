@@ -2,7 +2,7 @@
 #include <iostream>
 
 Central::Central(QObject *parent)
-    : QObject(parent), timer(new QTimer(this)) {
+    : QObject(parent), timer(new QTimer(this)), timerAct(new QTimer(this)), timerDes(new QTimer(this)) {
     connect(timer, SIGNAL(timeout()), this, SLOT(checkZones()));
     connect(timerAct, SIGNAL(timeout()), this, SLOT(changeZone0Build()));
     connect(this, SIGNAL(zone0Open()), this, SLOT(startTD()));

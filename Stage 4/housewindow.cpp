@@ -24,7 +24,6 @@ HouseWindow::HouseWindow(QWidget *parent, Central *cen): QMainWindow(parent), ui
 
     ui->alarmRegion->setScene(&exteriorScene);
     connect(c->timer, SIGNAL(timeout()), this, SLOT(alarmCheck()));
-
 }
 void HouseWindow::addHouseHollow(QGraphicsItemGroup * compoundItem){
     interiorScene.addItem(compoundItem);
