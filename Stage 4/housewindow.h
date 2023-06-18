@@ -16,7 +16,7 @@ class HouseWindow : public QMainWindow
     Q_OBJECT
 
 public:
-    HouseWindow(QWidget *parent = nullptr);
+    HouseWindow(QWidget *parent, Central *cen);
     void addHouseHollow(QGraphicsItemGroup *); // doors and windows
     void setCentral(Central *c);
     ~HouseWindow();
@@ -27,7 +27,6 @@ public:
 
 private slots:
     void on_pushButton_clicked();
-
     void on_pushButton_2_clicked();
     void alarmCheck();
 

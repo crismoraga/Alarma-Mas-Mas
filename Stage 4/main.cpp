@@ -15,8 +15,8 @@ using namespace std;
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
-    HouseWindow gui;  // gui: Graphical User Interface
     Central central;
+    HouseWindow gui(nullptr, &central);  // gui: Graphical User Interface
     ifstream fin;
     int nDoors, nWindows;
     
@@ -53,7 +53,7 @@ int main(int argc, char *argv[])
         central.addNewSensor(sensor);
         gui.addHouseHollow(windowView);
     }
-    gui.setCentral(&central);
+    //gui.setCentral(&central);
     gui.show();
     return a.exec();
 }
